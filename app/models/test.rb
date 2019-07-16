@@ -1,5 +1,6 @@
 class Test < ApplicationRecord
-  enum type: [:git, :rails]
+  CATEGORY_TYPE = [:git, :rails]
+  enum type: CATEGORY_TYPE
 
   validates :time, presence: true
 end
