@@ -4,7 +4,6 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.string :content
       t.integer :test_id
 
-
       t.timestamps
     end
 
