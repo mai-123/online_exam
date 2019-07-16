@@ -1,7 +1,5 @@
 class Test < ApplicationRecord
-
-  enum type: [ :Git, :Rails ]
+  enum type: [:git, :rails]
 
   validates :time, presence: true
-
 end

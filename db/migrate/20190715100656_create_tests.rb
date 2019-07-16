@@ -4,7 +4,6 @@ class CreateTests < ActiveRecord::Migration[5.2]
       t.integer :type
       t.string :name
       t.integer :time
-      t.integer :total_question
 
       t.timestamps
     end
