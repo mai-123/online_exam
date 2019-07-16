@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_042020) do
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "type"
     t.string "name"
-    t.integer "time", default: 10
+    t.integer "time"
     t.integer "total_question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
