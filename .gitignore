@@ -29,6 +29,5 @@
 # Ignore application configuration
 /config/application.yml
 
-
 # ignore folder test
 /test/*
