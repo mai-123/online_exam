@@ -37,12 +37,11 @@ ActiveRecord::Schema.define(version: 2019_07_16_042020) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "test_id"], name: "index_results_on_user_id_and_test_id"
   end
-ActiveRecord::Schema.define(version: 2019_07_15_100656) do
 
   create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "type"
     t.string "name"
-    t.integer "time"
+    t.integer "time", default: 10
     t.integer "total_question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
