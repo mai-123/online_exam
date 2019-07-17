@@ -6,15 +6,6 @@ en:
     new:
       hello: "Hello world"
       title: "Log in"
-      remember_me: "Remember me"
-      forget_pass: "Forget password?"
   layouts:
     application:
       greeting: "Hello"
-  password_resets:
-    new:
-      title: "Forget password"
-      submit: "Submit email"
-    create:
-      error_reset: "Email not found!"
-      info_reset: "Email send with password reset instructions"
