@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_email(params[:session][:email])
-    if @user && @user.authenticate(params[:session][:password])
-      log_in @user
+    user = User.find_by_email(params[:session][:email])
+    if user && user.authenticate(params[:session][:password])
+      log_in user
       flash[:success] = 'Logged in'
       redirect_to root_url
     else
