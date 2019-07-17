@@ -12,11 +12,8 @@
     <%= render "layouts/header" %>
     <div class="container">
       <%= render "layouts/flash" %>
-      <% if logged_in? %>
-        <h2 class="text-center"> <%= t(".greeting") + " " + current_user.name %></h2>
-      <% end %>
       <%= yield %>
-      <%= render "layouts/footer" %>
     </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>
