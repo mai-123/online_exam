@@ -6,6 +6,8 @@ en:
     new:
       hello: "Hello world"
       title: "Log in"
+      email: "Email"
+      password: "Password"
   layouts:
     application:
       greeting: "Hello"
