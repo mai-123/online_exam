@@ -1,10 +1,11 @@
 en:
   sessions:
+    create:
+      success_login: "Logged in successfully"
+      error_login: "Wrong email or password"
     new:
       hello: "Hello world"
       title: "Log in"
-      success_login: "Logged in successfully"
-      error_login: "Wrong email or password"
       remember_me: "Remember me"
   layouts:
     application:
