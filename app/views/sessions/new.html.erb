@@ -4,12 +4,12 @@
   <div class="col-md-4 col-md-offset-4">
     <%= form_for(:session, url: login_path) do |f| %>
       <div class="form-group">
-        <%= f.label t ".email" %>
+        <%= f.label :email, t(".email") %>
         <%= f.email_field :email, class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.label t ".password" %>
+        <%= f.label :password, t(".password") %>
         <%= f.password_field :password, class: "form-control" %>
       </div>
 

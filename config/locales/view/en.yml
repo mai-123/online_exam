@@ -8,6 +8,6 @@ en:
       title: "Log in"
       email: "Email"
       password: "Password"
-  layouts:
-    application:
-      greeting: "Hello"
+  static_pages:
+    home:
+      greeting: "Hello %{name}"
