@@ -28,8 +28,9 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(:password => params[:password_reset][:password],
-      :password_confirmation => params[:password_reset][:password_confirm])
+    if @user.update_attributes(password: params[:password_reset][:password],
+        password_confirmation: params[:password_reset][:password_confirm])
+      @user.update_attribute :reset_digest, nil
       flash[:success] = t ".success"
       redirect_to login_path
     else
@@ -46,7 +47,7 @@ class PasswordResetsController < ApplicationController
     def check_expiration
       if @user.password_reset_expired?
         flash[:danger] = t ".error_expiration"
-        redirect_to new_password_reset_url
+        redirect_to new_password_reset_path
       end
     end
 end

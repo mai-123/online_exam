@@ -1,3 +1,6 @@
 db_host: sample
 db_username: sample
 db_password: sample
+domain: sample
+email_name: sample
+email_password: sample
