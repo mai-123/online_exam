@@ -22,6 +22,7 @@ en:
     edit:
       title: "Reset password"
       out_of_date: "Your action is out of date. Let try it!"
-      success: "Reset password successfully, please login again"
       error_confirm: "Password confirm is not match"
       error_expiration: "Password reset has expired."
+    update:
+      success: "Reset password successfully, please login again"

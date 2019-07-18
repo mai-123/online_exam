@@ -26,10 +26,6 @@ class User < ApplicationRecord
     update_attribute :reset_send_at, Time.zone.now
   end
 
-  def send_password_reset_email
-    UserMailer.password_reset(self).deliver_now
-  end
-
   def authenticated? token
     return false if reset_digest.nil?
     BCrypt::Password.new(reset_digest).is_password?(token)
