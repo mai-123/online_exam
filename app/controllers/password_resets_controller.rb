@@ -52,6 +52,6 @@ class PasswordResetsController < ApplicationController
     end
 
     def send_password_reset_email user
-    UserMailer.password_reset(user).deliver_now
-  end
+      UserMailer.password_reset(user).deliver_now
+    end
 end
