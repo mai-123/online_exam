@@ -10,16 +10,6 @@ class User < ApplicationRecord
                     uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}
 
-  def User.digest string
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
-
-  def User.new_token
-    SecureRandom.urlsafe_base64
-  end
-
   def create_reset_digest
     self.reset_token = User.new_token
     update_attribute :reset_digest,  User.digest(reset_token)
@@ -33,5 +23,17 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_send_at < 1.hours.ago
+  end
+
+  class << self
+    def digest string
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                    BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 end
