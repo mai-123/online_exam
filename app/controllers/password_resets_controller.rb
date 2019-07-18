@@ -28,7 +28,8 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(:password => params[:password_reset][:password], :password_confirmation => params[:password_reset][:password_confirm])
+    if @user.update_attributes(:password => params[:password_reset][:password],
+      :password_confirmation => params[:password_reset][:password_confirm])
       flash[:success] = t ".success"
       redirect_to login_path
     else
