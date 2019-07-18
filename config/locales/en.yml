@@ -1,3 +1,7 @@
 en:
   common:
     page_title: "Vareal VietNam"
+  hello: "Hello world"
+  errorlogin: "Email or password is uncorrect"
+  successlogin: "Logged in"
+  login: "Log in"

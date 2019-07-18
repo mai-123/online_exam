@@ -11,6 +11,9 @@ class SessionsController < ApplicationController
     else
       flash.now[:danger] = t ".error_login"
       render "new"
+    else
+      flash.now[:danger] = I18n:t 'errorlogin'
+      render 'new'
     end
   end
 
