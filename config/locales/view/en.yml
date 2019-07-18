@@ -8,6 +8,20 @@ en:
       title: "Log in"
       email: "Email"
       password: "Password"
+      forget_password: "Forget password?"
   static_pages:
     home:
       greeting: "Hello %{name}"
+  password_resets:
+    new:
+      title: "Password reset"
+      submit: "Sumit email"
+    create:
+      error: "Email is not exist"
+      success: "Please checkout your email for password reset instructions"
+    edit:
+      title: "Reset password"
+      out_of_date: "Your action is out of date. Let try it!"
+      success: "Reset password successfully, please login again"
+      error_confirm: "Password confirm is not match"
+      error_expiration: "Password reset has expired."
