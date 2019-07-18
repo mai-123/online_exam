@@ -6,3 +6,6 @@ en:
   successlogin: "Logged in"
   login: "Log in"
   subject: "Password reset"
+  user_mailer:
+    password_reset:
+      subject: "Password reset"
