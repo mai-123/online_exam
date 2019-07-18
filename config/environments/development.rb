@@ -63,13 +63,13 @@ Rails.application.configure do
 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    user_name: ENV["email_address"],
+    address: ENV["email_address"],
+    port: ENV["email_port"],
+    user_name: ENV["email_name_address"],
     password: ENV["email_password"],
     authentication: :plain,
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { :host => ENV["domain"]}
+  config.action_mailer.default_url_options = { :host => ENV["email_host"]}
 end
