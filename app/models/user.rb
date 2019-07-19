@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+  PASSWORD_EXPIRED_TIME = 1
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :reset_token
-  TIME_EXPIRED = 1
 
   has_secure_password
 
@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def password_reset_expired?
-    reset_send_at < TIME_EXPIRED.hours.ago
+    reset_send_at < PASSWORD_EXPIRED_TIME.hours.ago
   end
 
   class << self
