@@ -29,3 +29,6 @@ en:
   user_mailer:
     password_reset:
       title: "Password reset"
+      content_email: "Let click on link for reset your password"
+      reset_password: "Reset password"
+

@@ -9,7 +9,7 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by email: params[:password_reset][:email]
     if @user
       @user.create_reset_digest
-      send_password_reset_email @user
+      send_password_reset_email
       flash[:success] = t ".success"
       redirect_to root_url
     else
@@ -28,8 +28,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(password: params[:password_reset][:password],
-        password_confirmation: params[:password_reset][:password_confirm])
+    if @user.update_attributes(reset_password_params)
       @user.update_attribute :reset_digest, nil
       flash[:success] = t ".success"
       redirect_to login_path
@@ -50,7 +49,12 @@ class PasswordResetsController < ApplicationController
       redirect_to new_password_reset_path
     end
 
-    def send_password_reset_email user
-      UserMailer.password_reset(user).deliver_now
+    def send_password_reset_email
+      UserMailer.password_reset(@user).deliver_now
+    end
+
+    def reset_password_params
+      params.require(:password_reset).permit(:password,
+          :password_confirmation)
     end
 end
