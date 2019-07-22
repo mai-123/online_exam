@@ -58,6 +58,9 @@ en:
       submit: "Save"
     update:
       success_update: "Update a user successfully"
+    destroy:
+      success_delete: "Delete a user successfully"
+      error_404: "Request cannot be found"
   shared:
     error_messages:
       error-exaplanation: "Have %{number_errors}"
